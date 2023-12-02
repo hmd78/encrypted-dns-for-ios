@@ -44,7 +44,7 @@
 [adguard-dns-default-profile-https]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-default-https.mobileconfig
 [adguard-dns-default-profile-tls]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-default-tls.mobileconfig
 [adguard-dns-family]: https://adguard-dns.io/kb/general/dns-providers/#family-protection
-[HumedYusi-profile-https]: https://github.com/hmd78/encrypted-dns-for-ios/blob/master/profiles/HumedYusi-https.mobileconfig
+[HumedYusi-profile-https]: https://github.com/hmd78/encrypted-dns-for-ios/raw/master/profiles/HumedYusi-https.mobileconfig
 [adguard-dns-family-profile-tls]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-family-tls.mobileconfig
 [adguard-dns-unfiltered]: https://adguard-dns.io/kb/general/dns-providers/#non-filtering
 [adguard-dns-unfiltered-profile-https]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-nofilter-https.mobileconfig
