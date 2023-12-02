@@ -10,7 +10,7 @@
 | ---------------------------------------------------- | ------ | ---------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
 | [360 Security DNS][360-dns]                          | 🇨🇳     | Yes        | Operated by 360 Digital Security Group                                                                    | [HTTPS][360-dns-profile-https-signed]                                                                        | [HTTPS][360-dns-profile-https]                                                                 |
 | [AdGuard DNS Default][adguard-dns-default]           | 🇷🇺     | Yes        | Operated by AdGuard Software Ltd. Blocks ads, tracking & phishing                                         | [HTTPS][adguard-dns-default-profile-https-signed], [TLS][adguard-dns-default-profile-tls-signed]             | [HTTPS][adguard-dns-default-profile-https], [TLS][adguard-dns-default-profile-tls]             |
-| [AdGuard DNS Family Protection][adguard-dns-family]  | 🇷🇺     | Yes        | HumedYusi dns - Use left-Most one (Unsigned)                              | [HTTPS][adguard-dns-family-profile-https-signed], [TLS][adguard-dns-family-profile-tls-signed]               | [HTTPS][HumedYusi-profile-https], [TLS][adguard-dns-family-profile-tls]               |
+| [AdGuard DNS Family Protection][adguard-dns-family]  | 🇷🇺     | Yes        | HumedYusi dns - Use leftMost                              | [HTTPS][adguard-dns-family-profile-https-signed], [TLS][adguard-dns-family-profile-tls-signed]               | [HTTPS][HumedYusi-profile-https], [TLS][adguard-dns-family-profile-tls]               |
 | [AdGuard DNS Non-filtering][adguard-dns-unfiltered]  | 🇷🇺     | No         | Operated by AdGuard Software Ltd. Non-filtering                                                           | [HTTPS][adguard-dns-unfiltered-profile-https-signed], [TLS][adguard-dns-unfiltered-profile-tls-signed]       | [HTTPS][adguard-dns-unfiltered-profile-https], [TLS][adguard-dns-unfiltered-profile-tls]       |
 | [Alekberg Encrypted DNS][alekberg-dns]               | 🇳🇱     | No         | Independent                                                                                               | [HTTPS][alekberg-dns-profile-https-signed]                                                                   | [HTTPS][alekberg-dns-profile-https]                                                            |
 | [Aliyun Public DNS][aliyun-dns]                      | 🇨🇳     | No         | Operated by Alibaba Cloud Ltd.                                                                            | [HTTPS][aliyun-dns-profile-https-signed], [TLS][aliyun-dns-profile-tls-signed]                               | [HTTPS][aliyun-dns-profile-https], [TLS][aliyun-dns-profile-tls]                               |
@@ -38,79 +38,13 @@
 | [Quad9 w/ ECS][quad9]                                | 🇨🇭     | Yes        | Operated by Quad9 Foundation. Supports ECS. Blocks malware                                                | [HTTPS][quad9-ecs-profile-https-signed], [TLS][quad9-ecs-profile-tls-signed]                                 | [HTTPS][quad9-ecs-profile-https], [TLS][quad9-ecs-profile-tls]                                 |
 | [Tiarap][tiarap]                                     | 🇸🇬 🇺🇸  | Yes        | Operated by Tiarap Inc. Blocks ads, tracking, phising & malware                                           | [HTTPS][tiarap-profile-https-signed], [TLS][tiarap-profile-tls-signed]                                       | [HTTPS][tiarap-profile-https], [TLS][tiarap-profile-tls]                                       |
 
-## Installation
-
-To make settings work across all apps in **iOS**, **iPadOS** & **macOS**, you'll need to install configuration profile. This profile would tell operating system to use DoH / DoT. Note: it's not enough to simply set server IPs in System Preferences — you need to install a profile.
-
-iOS / iPadOS: Open the mobileconfig file in GitHub by using Safari (other browsers will just download the file and won't ask for installation), and then click/tap on "Allow" button. The profile should download. Go to **System Settings => General => VPN, DNS & Device Management**, select downloaded profile and tap the "Install" button.
-
-macOS [(official docs)](https://support.apple.com/guide/mac-help/mh35561/):
-
-1. Download and save the profile. After save, rename it to be in format: `NAME.mobileconfig`, not NAME.txt, or so
-2. Choose Apple menu > System Settings, click Privacy and Security in the sidebar, then click Profiles on the right. (You may need to scroll down.)
-   You may be asked to supply your password or other information during installation.
-3. In the Downloaded section, double-click the profile.
-4. Review the profile contents then click Continue, Install or Enroll to install the profile.
-
-   If an earlier version of a profile is already installed on your Mac, the settings in the updated version replace the previous ones.
-
-## Scope
-
-There seems to be an [additional option](https://github.com/paulmillr/encrypted-dns/issues/22) that allows to use system-wide profiles. To try it, add this to mobileconfig file:
-
-```xml
-<key>PayloadScope</key>
-<string>System</string>
-```
-
-## Signed Profiles
-
-In the `signed` folder we have signed versions of the profiles in this repository. These profiles have been signed by [@Xernium](https://github.com/Xernium) so that when you install the profiles, 
-they will have a verified check box on the installation screen. It also ensures that these profiles have not been tampered with. However, since they were signed by a third party, they may lag behind their unsigned counterparts a little.
-The signature is valid until `2024-11-30`
-
-Previous signature by:
-[@Candygoblen123](https://github.com/Candygoblen123), replaced at `2023-11-29`
-
-[comment]: <> (We recommend that you install a signed profile instead of an unsigned profile because it ensures that it was not modified while it was downloading.)
-
-To verify resolver IPs and hostnames, compare mobileconfig files to their documentation URLs. Internal workings of the profiles are described on [developer.apple.com](https://developer.apple.com/documentation/devicemanagement/dnssettings). In order to verify signed mobileconfigs, you will need to download them to your computer and open them in a text editor, because signing profiles makes GitHub think that they are binary files.
-
-## Contributing a new profile
-
-Profiles are basically text files. Copy an existing one and change its UUID, make sure you update README with new profile's info.
-
-In addition to generating online, there are many other ways to generate a random UUID:
-
-- Press `F12` to open DevTools in the browser, run this code in the console
-
-```javascript
-crypto.randomUUID();
-```
-
-- Run these commands in the macOS / Linux terminal
-
-```sh
-# Works both in macOS & Linux
-uuidgen
-
-# Works in Linux
-cat /proc/sys/kernel/random/uuid
-```
-
-- Run this cmdlet in Powershell
-
-```powershell
-New-Guid
-```
-
 [360-dns]: https://sdns.360.net/dnsPublic.html
 [360-dns-profile-https]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/360-https.mobileconfig
 [adguard-dns-default]: https://adguard-dns.io/kb/general/dns-providers/#default
 [adguard-dns-default-profile-https]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-default-https.mobileconfig
 [adguard-dns-default-profile-tls]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-default-tls.mobileconfig
 [adguard-dns-family]: https://adguard-dns.io/kb/general/dns-providers/#family-protection
-[HumedYusi-profile-https]: https://github.com/hmd78/encrypted-dns/blob/master/profiles/adguard-family-https.mobileconfig
+[HumedYusi-profile-https]: https://github.com/hmd78/encrypted-dns-for-ios/blob/master/profiles/HumedYusi-https.mobileconfig
 [adguard-dns-family-profile-tls]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-family-tls.mobileconfig
 [adguard-dns-unfiltered]: https://adguard-dns.io/kb/general/dns-providers/#non-filtering
 [adguard-dns-unfiltered-profile-https]: https://github.com/paulmillr/encrypted-dns/raw/master/profiles/adguard-nofilter-https.mobileconfig
