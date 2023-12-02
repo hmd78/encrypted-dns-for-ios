@@ -11,11 +11,11 @@
 				<string>HTTPS</string>
 				<key>ServerAddresses</key>
 				<array>
-					<string>10.202.10.11</string>
-					<string>24.218.117.100</string>
+					<string>10.202.10.202</string>
+					<string>10.202.10.102</string>
 				</array>
 				<key>ServerName</key>
-				<string>humed.Yusi</string>
+				<string>dns.403.online</string>
 			</dict>
 			<key>PayloadDescription</key>
 			<string>Configures device to use humed Protection Encrypted DNS over TLS</string>

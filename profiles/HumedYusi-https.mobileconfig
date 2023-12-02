@@ -11,9 +11,11 @@
 				<string>HTTPS</string>
 				<key>ServerAddresses</key>
 				<array>
-					<string>10.202.10.11</string>
-					<string>24.218.117.100</string>
+					<string>10.202.10.202</string>
+					<string>10.202.10.102</string>
 				</array>
+				<key>ServerURL</key>
+				<string>https://dns.403.online/dns-query</string>
 			</dict>
 			<key>PayloadDescription</key>
 			<string>Configures device to use Hamed DNS over HTTPS</string>
