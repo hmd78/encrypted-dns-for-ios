@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>PayloadContent</key>
+<array>
+<dict>
+<key>DNSSettings</key>
+<dict>
+<key>DNSProtocol</key>
+<string>HTTPS</string>
+<key>ServerURL</key>
+<string>https://dns.electrotm.org/dns-query</string>
+</dict>
+<key>OnDemandRules</key>
+<array>
+<dict>
+<key>Action</key>
+<string>Connect</string>
+<key>InterfaceTypeMatch</key>
+<string>WiFi</string>
+</dict>
+<dict>
+<key>Action</key>
+<string>Connect</string>
+<key>InterfaceTypeMatch</key>
+<string>Cellular</string>
+</dict>
+<dict>
+<key>Action</key>
+<string>Disconnect</string>
+</dict>
+</array>
+<key>PayloadDescription</key>
+<string>حامد حواسش هست</string>
+<key>PayloadDisplayName</key>
+<string>Humed Yusi DNS</string>
+<key>PayloadIdentifier</key>
+<string>com.apple.dnsSettings.managed.c760ed14-9bd1-460c-bb9f-8f71dd5cd842</string>
+<key>PayloadType</key>
+<string>com.apple.dnsSettings.managed</string>
+<key>PayloadUUID</key>
+<string>c990359f-1526-4b2a-88d4-7f5eada98b35</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+<key>ProhibitDisablement</key>
+<false/>
+</dict>
+<dict>
+<key>DNSSettings</key>
+<dict>
+<key>DNSProtocol</key>
+<string>TLS</string>
+<key>ServerName</key>
+<string>dns.electrotm.org</string>
+</dict>
+<key>OnDemandRules</key>
+<array>
+<dict>
+<key>Action</key>
+<string>Connect</string>
+<key>InterfaceTypeMatch</key>
+<string>WiFi</string>
+</dict>
+<dict>
+<key>Action</key>
+<string>Connect</string>
+<key>InterfaceTypeMatch</key>
+<string>Cellular</string>
+</dict>
+<dict>
+<key>Action</key>
+<string>Disconnect</string>
+</dict>
+</array>
+<key>PayloadDescription</key>
+<string>حامد حواسش هست</string>
+<key>PayloadDisplayName</key>
+<string>Yusi Humed DNS</string>
+<key>PayloadIdentifier</key>
+<string>com.apple.dnsSettings.managed.eb62adfe-18e0-40f6-a97b-74480cdcf627</string>
+<key>PayloadType</key>
+<string>com.apple.dnsSettings.managed</string>
+<key>PayloadUUID</key>
+<string>69f62ee0-f03c-40b7-9cfa-e5a633161708</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+<key>ProhibitDisablement</key>
+<false/>
+</dict>
+</array>
+<key>PayloadDescription</key>
+<string>Adds different DNS configurations to macOS X and iOS based systems</string>
+<key>PayloadDisplayName</key>
+<string>Humed Yusi DNS</string>
+<key>PayloadIdentifier</key>
+<string>org.electro.a0e3f894-c4b8-49f8-9739-7ce533bbb750</string>
+<key>PayloadRemovalDisallowed</key>
+<false/>
+<key>PayloadType</key>
+<string>Configuration</string>
+<key>PayloadUUID</key>
+<string>5d59c70b-9c0d-404d-bac3-2c61a42eab37</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+</dict>
+</plist>
